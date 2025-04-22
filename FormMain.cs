@@ -64,6 +64,7 @@ namespace HelloWorldWinform
                     return;
                     break;
                 case DialogResult.OK:
+                    lblFileName.Text = openFileDialog.FileName;
                     using (StreamReader sr = new StreamReader(openFileDialog.FileName))
                     {
                         textBox1.Text = sr.ReadToEnd();
@@ -71,6 +72,11 @@ namespace HelloWorldWinform
                     }
                     break;
             }
+
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
     }
